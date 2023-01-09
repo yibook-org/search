@@ -65,7 +65,7 @@
                             <input type="text" class="form-control" name="v" v-model="keyword"
                                 placeholder="Search for title" @keyup.enter="search" value="">
                             <div class="btn-group">
-                                <button type="submit" class="btn btn-primary btn-lg" @click='search(direct_site[0].url,true,false)'>Search</button>
+                                <button type="submit" class="btn btn-primary btn-lg" @click='search(default,true,false)'>Search</button>
                                 <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 </button>
@@ -125,6 +125,7 @@
                     keyword: '',
                     page:'home',
                     link: '',
+                    default: 'https://search.zhelper.net/?[{%22name%22:%22Ylibrary%22,%22url%22:%22https://api.ylibrary.org%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:true}]#',
                     direct_site: [
                         {
                             "url": 'https://search.zhelper.net/?[{%22name%22:%22Ylibrary%22,%22url%22:%22https://api.ylibrary.org%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:true}]#',
