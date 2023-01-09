@@ -23,9 +23,9 @@
             <div class="container">
                 <header class="d-flex justify-content-center py-3">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">首页</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link" :class="{active: page=='home'}" aria-current="page">首页</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            <a class="nav-link dropdown-toggle" :class="{active: page=='search'}" data-bs-toggle="dropdown" href="#" role="button" 
                                 aria-expanded="false">切换</a>
                             <ul class="dropdown-menu">
                                 <li v-for="site in direct_site" :key="site.id">
@@ -53,7 +53,7 @@
                 </header>
             </div>
             <div id="app">
-                <div class="px-4 py-5 my-5 text-center" :hidden="!homepage">
+                <div class="px-4 py-5 my-5 text-center" :hidden="!(page=='home')">
                     <!-- <img class="d-block mx-auto mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
                     <h1 class="display-5 fw-bold">易书 书籍检索</h1>
                     <div class="col-lg-6 mx-auto">
@@ -65,7 +65,7 @@
                             <input type="text" class="form-control" name="v" v-model="keyword"
                                 placeholder="Search for title" @keyup.enter="search" value="">
                             <div class="btn-group">
-                                <button type="submit" class="btn btn-primary btn-lg" @click='search'>Search</button>
+                                <button type="submit" class="btn btn-primary btn-lg" @click='search(direct_site[0].url,true,false)'>Search</button>
                                 <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                 </button>
@@ -123,7 +123,7 @@
             data() {
                 return {
                     keyword: '',
-                    homepage: true,
+                    page:'home',
                     link: '',
                     direct_site: [
                         {
@@ -188,7 +188,7 @@
                     if (get) {
                         if (!redirect) {
                             this.link = url + this.keyword
-                            this.homepage = false;
+                            this.page = 'search'
                         }
                         else {
                             window.open(url + this.keyword, '_blank');
@@ -197,7 +197,7 @@
                     else {
                         if (!redirect) {
                             this.link = url
-                            this.homepage = false;
+                            this.page = 'search'
                         }
                         else {
                             window.open(url, '_blank');
