@@ -128,16 +128,15 @@
                     keyword: '',
                     page:'home',
                     link: '',
-                    d_url: 'https://search.zhelper.net/?[{%22name%22:%22Ylibrary%22,%22url%22:%22https://api.ylibrary.org%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:true}]#',
+                    d_url: 'https://search.zhelper.net/?[%7B%22name%22:%22zlib.app%22,%22url%22:%22https://worker.zlib.app%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:false,%22download%22:%22https://worker.zlib.app/download/%22%7D]#',
                     direct_site: [
- 
+                        {
+                            "url": 'https://search.zhelper.net/?[%7B%22name%22:%22zlib.app%22,%22url%22:%22https://worker.zlib.app%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:false,%22download%22:%22https://worker.zlib.app/download/%22%7D]#',
+                            "name": "zlib.app (Z-Library)"
+                        },
                         {
                             "url": 'https://search.zhelper.net/?[{%22name%22:%22Ylibrary%22,%22url%22:%22https://api.ylibrary.org%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:true}]#',
                             "name": "Ylibrary (zlib+Superlib)"
-                        },
-                        {
-                            "url": 'https://search.zhelper.net/?[{%22name%22:%22zlib.app%22,%22url%22:%22https://api.zlib.app%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:false,%22download%22:%22https://d.zlib.app/download/%22}]#',
-                            "name": "zlib.app (Z-Library)"
                         },
                         {
                             "url": 'https://search.zhelper.net/?[{%22name%22:%22bookpan%22,%22url%22:%22https://api.bookpan.net%22,%22type%22:%22light%22,%22sensitive%22:false,%22detail%22:true}]#',
@@ -172,10 +171,10 @@
 
                     ],
                     blocked_site: [
-                    {
-                        "url": 'https://zlibrary.cf/s/',
-                        "name": "zlibrary (镜像站)"
-                    },
+                        {
+                            "url": 'https://zlibrary.tk/s/',
+                            "name": "zlibrary (镜像站)"
+                        },
                         {
                             "url": 'http://book.dglib.superlib.net/search?Field=all&channel=search&ecode=utf-8&sw=',
                             "name": "超星"
